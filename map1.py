@@ -9,13 +9,23 @@ lat = list(data["LAT"])
 lon = list(data["LON"])
 elev = list(data["ELEV"])
 
+# Returns color for different categories of elevation
+def get_elevation_color(elevation):
+	if elevation < 1000:
+		return "green"
+	elif 1000 <= elevation < 3000:
+		return "orange"
+	else:
+		return "red"
+
 # Defining the map and feature group
 map = folium.Map([38.58, -99.09], zoom_start=6, tiles="Mapbox Bright")
 fg = folium.FeatureGroup(name="My Map")
 
 # Adding the markers from the list
 for lt, ln, el in zip(lat, lon, elev):
-	fg.add_child(folium.Marker(location=[lt, ln], popup=str(el) + " m", icon=folium.Icon(color="red")))
+	fg.add_child(folium.Marker(location=[lt, ln], popup=str(el) + " m",
+		icon=folium.Icon(color=get_elevation_color(el))))
 
 map.add_child(fg)
 
