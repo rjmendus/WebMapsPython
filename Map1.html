@@ -15,7 +15,7 @@
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     
-            <style> #map_afd791f994c847ca9636ac3ec7468733 {
+            <style> #map_22b56435e0b84c1bb74aafc073dc14a2 {
                 position : relative;
                 width : 100.0%;
                 height: 100.0%;
@@ -27,7 +27,7 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_afd791f994c847ca9636ac3ec7468733" ></div>
+            <div class="folium-map" id="map_22b56435e0b84c1bb74aafc073dc14a2" ></div>
         
 </body>
 <script>    
@@ -37,8 +37,8 @@
                 var bounds = null;
             
 
-            var map_afd791f994c847ca9636ac3ec7468733 = L.map(
-                                  'map_afd791f994c847ca9636ac3ec7468733',
+            var map_22b56435e0b84c1bb74aafc073dc14a2 = L.map(
+                                  'map_22b56435e0b84c1bb74aafc073dc14a2',
                                   {center: [9.9632,76.2532],
                                   zoom: 6,
                                   maxBounds: bounds,
@@ -49,7 +49,7 @@
             
         
     
-            var tile_layer_e0459fb3d69949f9b101886ff745eb17 = L.tileLayer(
+            var tile_layer_145891fa34274b4bbee41850967221a1 = L.tileLayer(
                 'https://{s}.tiles.mapbox.com/v3/mapbox.world-bright/{z}/{x}/{y}.png',
                 {
   "attribution": null,
@@ -59,6 +59,43 @@
   "noWrap": false,
   "subdomains": "abc"
 }
-                ).addTo(map_afd791f994c847ca9636ac3ec7468733);
+                ).addTo(map_22b56435e0b84c1bb74aafc073dc14a2);
+        
+    
+            var feature_group_b70b3ab97faa40559bb186515e0dfab6 = L.featureGroup(
+                ).addTo(map_22b56435e0b84c1bb74aafc073dc14a2);
+        
+    
+
+            var marker_84da24fa354f4eef8c4fca0f2efa81b7 = L.marker(
+                [9.6,76.4],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(feature_group_b70b3ab97faa40559bb186515e0dfab6);
+            
+    
+
+                var icon_1995f014328349e094f07ff5d205ab80 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_84da24fa354f4eef8c4fca0f2efa81b7.setIcon(icon_1995f014328349e094f07ff5d205ab80);
+            
+    
+            var popup_a9a4bedb8b8649b8b886c7592941007a = L.popup({maxWidth: '300'});
+
+            
+                var html_68b135e4569143aaa01dd428a1da56b7 = $('<div id="html_68b135e4569143aaa01dd428a1da56b7" style="width: 100.0%; height: 100.0%;">Hello</div>')[0];
+                popup_a9a4bedb8b8649b8b886c7592941007a.setContent(html_68b135e4569143aaa01dd428a1da56b7);
+            
+
+            marker_84da24fa354f4eef8c4fca0f2efa81b7.bindPopup(popup_a9a4bedb8b8649b8b886c7592941007a);
+
+            
         
 </script>
