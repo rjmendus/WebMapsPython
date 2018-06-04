@@ -24,8 +24,8 @@ fg = folium.FeatureGroup(name="My Map")
 
 # Adding the markers from the list
 for lt, ln, el in zip(lat, lon, elev):
-	fg.add_child(folium.Marker(location=[lt, ln], popup=str(el) + " m",
-		icon=folium.Icon(color=get_elevation_color(el))))
+	fg.add_child(folium.CircleMarker(location=[lt, ln], radius = 6, popup=str(el) + " m",
+		fill_color = get_elevation_color(el), color= "black", fill = True, fill_opacity=0.7))
 
 map.add_child(fg)
 
