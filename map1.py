@@ -31,7 +31,9 @@ for lt, ln, el in zip(lat, lon, elev):
 geo_json = open("world.json", "r", encoding="utf-8-sig")
 
 # Adding the polygons to map
-fg.add_child(folium.GeoJson(data=geo_json.read()))
+fg.add_child(folium.GeoJson(data=geo_json.read(),
+	style_function = lambda x: {"fillColor":"green" if x["properties"]["POP2005"] < 10000000 
+	else "orange" if 10000000 <= x["properties"]["POP2005"] < 20000000 else "red"}))
 
 map.add_child(fg)
 
